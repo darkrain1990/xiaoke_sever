@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoke.mapper.RoleMapper">
+
+	<sql id="condition">
+		<where>
+			<if test="roleName !=null and roleName !='' ">
+				and role_name =#{roleName}
+			</if> 
+			
+			<if test="systemId !=null">
+				and system_id=#{systemId}
+			</if>
+			<if test="flag !=null and flag != '' ">
+				and flag=#{flag}
+			</if>
+		</where>
+		
+	</sql>
+	
+	<sql id="selectSql">
+		id,
+		role_name roleName,
+		system_id systemId,
+		role_desc roleDesc,
+		enabled,
+		issys
+	</sql>
+	
+	<select id="searchRoles" parameterType="com.xiaoke.entity.qo.SysRoleQO" resultType="com.xiaoke.entity.Role">
+		select <include refid="selectSql"/> from sys_roles <include refid="condition"/>
+		limit #{beginRow},#{pageSize}
+	</select>
+	 
+  	<select id="findTotal" parameterType="com.xiaoke.entity.qo.SysRoleQO" resultType="int">
+	 	select count(*) from sys_roles <include refid="condition"/>
+	</select>
+	
+	<insert id="addRole" parameterType="com.xiaoke.entity.Role" >
+		insert into sys_roles values(#{id},
+									#{roleName},
+									#{roleDesc},
+									#{systemId},
+									#{enabled},
+									#{issys},
+									1);
+	</insert>
+	
+	<update id="delRoleById" parameterType="java.lang.String">
+		update sys_roles set flag=0	where id=#{id}	
+	</update>
+	
+	<update id="updateRoleById" parameterType="com.xiaoke.entity.Role">
+		update sys_roles set role_name=#{roleName}, system_id=#{systemId}, role_desc=#{roleDesc}, enabled=#{enabled}, issys=#{issys}
+		where id=#{id}
+	</update>
+	
+	<!-- 获取系统下所有可用角色 -->
+	<select id="findRolesBySystemId" resultType="com.xiaoke.entity.Role" parameterType="java.lang.Integer">
+		select <include refid="selectSql"/> 
+				from sys_roles 
+				where system_id = #{systemId} and flag=1 and enabled=1
+	</select>
+	
+	<!-- 获取用户的所有角色 -->
+	<select id="findRoleIdsByUserId" resultType="com.xiaoke.entity.Role" >
+		select r.id,r.system_id  systemId,r.role_name roleName from sys_roles r
+			left join sys_users_roles ur
+			on r.id=ur.role_id
+			where ur.user_id=#{userId};
+	</select>
+	
+</mapper>

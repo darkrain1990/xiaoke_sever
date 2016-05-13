@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoke.mapper.ResourceMapper">
+
+	<sql id="condition">
+		<where>
+			<if test="resourceName !=null and resourceName !='' ">
+				and resource_name =#{resourceName}
+			</if> 
+			<if test="systemId !=null">
+				and system_id=#{systemId}
+			</if>
+			
+			<if test="flag !=null and flag !='' ">
+				and flag=#{flag}
+			</if> 
+		</where>
+	</sql>
+	
+	<select id="searchResource" parameterType="com.xiaoke.entity.qo.SysResourceQO" resultType="com.xiaoke.entity.Resource">
+		select r.id,r.resource_name resourceName,r.system_id systemId,r.resource_desc resourceDesc,r.resource_type resourceType,
+		r.resource_string resourceString,r.enabled enable,r.issys,r.is_child isChild,sy.name sysName from sys_resources r
+		left join sys_systems sy
+		on r.system_id=sy.id
+		 <include refid="condition"/>
+		limit #{beginRow},#{endRow}
+		
+		
+		
+	</select>
+	 
+  	<select id="findTotal" parameterType="com.xiaoke.entity.qo.SysResourceQO" resultType="int">
+	 	select count(*) from sys_resources
+	 	<include refid="condition"/>
+	</select>
+	
+	<insert id="addResource" parameterType="com.xiaoke.entity.Resource" >
+			insert into sys_resources values(#{id},
+										#{resourceName},
+										#{resourceDesc},
+										#{resourceType},
+										#{resourceString},
+										#{priority},
+										#{enable},
+										#{issys},
+										#{systemId},
+										#{parentId},
+										#{rootId},
+										#{sortIndex},
+										#{imgageUrl},
+										#{isChild},
+										1);
+							
+	</insert>
+	   <!-- 刪除資源 -->
+	<update id="deleResource" parameterType="java.lang.String">
+		update sys_resources set flag=0	where id=#{id}
+	</update>
+	  <!--修改資源  -->
+	  
+	  <update id="updateResource" parameterType="com.xiaoke.entity.Resource">
+	  		update sys_resources set resource_name=#{resourceName}, system_id=#{systemId}, resource_desc=#{resourceDesc}, enabled=#{enable}, issys=#{issys}
+		where id=#{id}
+	  </update>
+	  
+	    <!-- 资源预览  查询资源模块  -->
+		<sql id="seeConfig">
+	 	<where>
+	 		<if test="systemId != null">
+	 			and system_id=#{systemId}
+	 			and flag=1
+	 		</if>
+	 	</where>
+	 </sql>
+	  <!--system_id systemId,resource_desc resourceDesc,resource_type resourceType,resource_string resourceString,enabled enable,issys,  -->
+	<select id="seeResources" parameterType="java.lang.Integer" resultType="com.xiaoke.entity.Resource">
+		select id,resource_name resourceName,parent_id parentId from sys_resources
+		<include refid="seeConfig"/>
+	</select>
+	
+	
+</mapper>

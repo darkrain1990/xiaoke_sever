@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoke.mapper.SysUsersMapper">
+	
+	<sql id="condition"  >
+		<where>
+			<if test="id !=null and id !='' ">
+				and id =#{id}
+			</if> 
+			<if test="loginName !=null and loginName != ''">
+				and login_name = #{loginName}
+			</if>
+			<if test="userName !=null and userName !='' ">
+				and user_name =#{userName}
+			</if> 
+			<if test="mobileNum !=null and mobileNum != ''">
+				and mobile_num = #{mobileNum}
+			</if>
+		</where>
+	</sql>
+	
+	<sql id="sysUsersSql">
+				id,
+				user_name userName,
+				login_name loginName,
+				user_name userName,
+				user_password userPassword,
+				user_desc userDesc,
+				enabled,
+				issys,
+				user_dept userDept,
+				user_duty userDuty,
+				email,				
+				mobile_num mobileNum,
+				flag,
+				system_id systemId,
+				create_date createDate
+	</sql>
+
+	<select id="findSysUsers" parameterType="com.xiaoke.entity.qo.SysUsersQO" resultType="com.xiaoke.entity.SysUsers">
+		select 
+			<include refid="sysUsersSql"/>
+			from sys_users <include refid="condition"/>
+		order by create_date desc
+		limit #{beginRow},#{pageSize}
+	</select>
+	 
+  	<select id="findTotal" parameterType="com.xiaoke.entity.qo.SysUsersQO" resultType="int">
+	 	select count(*) from sys_users
+	 	<include refid="condition"/>
+	</select>
+	
+	<insert id="addUser" parameterType="com.xiaoke.entity.SysUsers" >
+		INSERT INTO sys_users (
+							login_name,
+							user_name,
+							user_password,
+							user_desc,
+							enabled,
+							issys,
+							user_dept,
+							user_duty,
+							email,
+							mobile_num,
+							flag,
+							system_id,
+							create_date
+						) 
+						VALUES
+							(
+								#{loginName},
+								#{userName},
+								#{userPassword},
+								#{userDesc},
+								#{enabled},
+								#{issys},
+								#{userDept},
+								#{userDuty},
+								#{email},
+								#{mobileNum},
+								#{flag},
+								#{systemId},
+								CURRENT_TIMESTAMP
+							)
+									
+	</insert>
+	
+	<update id="updateUserById">
+		update sys_users 
+		<set>
+			<if test="loginName !=null and loginName !='' ">
+				login_name =#{loginName},
+			</if>
+			<if test="userName !=null and userName !='' ">
+				user_name =#{userName},
+			</if>
+			<if test="userPassword !=null and userPassword !='' ">
+				user_password =#{userPassword},
+			</if>
+			<if test="userDesc !=null and userDesc !='' ">
+				user_desc =#{userDesc},
+			</if>
+			<if test="enabled !=null ">
+				enabled =#{enabled},
+			</if> 
+			<if test="issys !=null ">
+				issys =#{issys},
+			</if>
+			<if test="userDesc !=null and userDesc !='' ">
+				user_desc =#{userDesc},
+			</if>
+			<if test="userDuty !=null and userDuty !='' ">
+				 user_duty=#{userDuty},
+			</if>
+			<if test="email !=null and email !='' ">
+			 	email=#{email},
+			</if>
+			<if test="mobileNum !=null and mobileNum !='' ">
+			 	mobile_num=#{mobileNum},
+			</if>
+		 	<if test="flag !=null ">
+			 	flag=#{flag}
+			</if>
+			<if test="systemId !=null ">
+			 	system_id=#{systemId},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delUserById">
+		delete from sys_users where id = #{id}
+	</delete>
+	
+	<select id="userLogin" parameterType="com.xiaoke.entity.SysUsers" resultType="com.xiaoke.entity.SysUsers">
+		select <include refid="sysUsersSql"/> from sys_users
+		<where>
+			<if test="id !=null">
+				and id =#{id}
+			</if> 
+			<if test="loginName !=null and loginName !='' ">
+				and login_name = #{loginName}
+			</if>
+			<if test="userPassword !=null and userPassword!='' ">
+				and user_password = #{userPassword}
+			</if>
+			<if test="enabled !=null ">
+				and enabled = #{enabled}
+			</if>
+			<if test="flag !=null ">
+				and flag = #{flag}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 根据登录用户获取角色 -->
+	<select id="findAllRoleByLogin" parameterType="com.xiaoke.entity.SysUsers" resultType="map">
+		select 
+			u.id,u.login_name,u.user_name,u.user_password,rol.id,rol.role_name,
+			rol.role_desc,sys.name 
+		from sys_users u left join sys_users_roles rols  on u.id = rols.user_id
+						 left join sys_roles rol on rol.id = rols.role_id
+						 left join sys_systems sys on rol.system_id = sys.id
+		where 
+			u.id = #{id}
+			and u.enabled = 1 
+			and u.flag = 1 
+			and rol.enabled = 1 
+			and rol.flag = 1
+	</select>
+	
+</mapper>

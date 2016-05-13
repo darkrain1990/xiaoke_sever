@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+		
+		<!--  
+		需要进行 Spring 整合 SpringMVC 吗 ?
+		还是否需要再加入 Spring 的 IOC 容器 ?
+		是否需要再 web.xml 文件中配置启动 Spring IOC 容器的 ContextLoaderListener ?
+		
+		1. 需要: 通常情况下, 类似于数据源, 事务, 整合其他框架都是放在 Spring 的配置文件中(而不是放在 SpringMVC 的配置文件中).
+		实际上放入 Spring 配置文件对应的 IOC 容器中的还有 Service 和 Dao. 
+		2. 不需要: 都放在 SpringMVC 的配置文件中. 也可以分多个 Spring 的配置文件, 然后使用 import 节点导入其他的配置文件
+	-->
+	
+	<!--  
+		问题: 若 Spring 的 IOC 容器和 SpringMVC 的 IOC 容器扫描的包有重合的部分, 就会导致有的 bean 会被创建 2 次.
+		解决:
+		1. 使 Spring 的 IOC 容器扫描的包和 SpringMVC 的 IOC 容器扫描的包没有重合的部分. 
+		2. 使用 exclude-filter 和 include-filter 子节点来规定只能扫描的注解
+	-->
+	
+	<!--  
+		SpringMVC 的 IOC 容器中的 bean 可以来引用 Spring IOC 容器中的 bean. 
+		返回来呢 ? 反之则不行. Spring IOC 容器中的 bean 却不能来引用 SpringMVC IOC 容器中的 bean!
+	-->
+
+	<mvc:annotation-driven >
+		<!-- 消息转换器 -->
+	    <mvc:message-converters register-defaults="true">
+	      <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+	        <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+	     </bean>
+
+        </mvc:message-converters>
+	 </mvc:annotation-driven>
+
+    <context:annotation-config/>
+
+	<context:component-scan base-package="com.xiaoke"></context:component-scan>
+
+	<!-- 配置视图解析器              前缀+ viewName +后缀 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- webroot到某一指定的文件夹的路径 -->
+		<property name="prefix" value="/jsp/"></property>
+		<!-- 视图名称的后缀 -->
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<mvc:default-servlet-handler/>
+	<!-- mvc的注解驱动 -->
+<!--	<mvc:annotation-driven/>-->
+	<!-- id="multipartResolver"必须是multipartResolver -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- maxUploadSize:文件上传的最大值以byte为单位,不能写小数，所以指定byte -->
+		<property name="maxUploadSize" value="1024000"></property>
+	</bean>	
+		
+		<!-- <mvc:interceptors>
+			<mvc:interceptor>
+				某一模块的拦截：/myPath/**, 拦截所有的请求/**
+				<mvc:mapping path="/**"/>
+				<bean class="com.xiaokeoke.common.interceptor.MyIntercepor"></bean>
+			</mvc:interceptor>
+		</mvc:interceptors> -->
+
+
+</beans>

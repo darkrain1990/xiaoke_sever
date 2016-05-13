@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoke.mapper.SysUsersRolesMapper">
+
+	<!-- 根据登录用户获取角色 -->
+	<select id="findRoleByUser" parameterType="com.xiaoke.entity.SysUsersRoles" resultType="com.xiaoke.entity.SysUsersRoles">
+		select user_id userId,role_id roleId from sys_users_roles where user_id = #{userId}
+	</select>
+	
+	<insert id="addUsersRoles" parameterType="com.xiaoke.entity.SysUsersRoles">
+		insert into sys_users_roles values(#{userId},#{roleId})
+	</insert>	
+	
+	<delete id="delUsresRoles" parameterType="com.xiaoke.entity.SysUsersRoles">
+		delete from sys_users_roles where user_id = #{userId} and role_id=#{roleId}
+	</delete>
+</mapper>

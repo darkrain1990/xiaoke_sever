@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoke.mapper.SysAuthoritiesMapper">
+	
+	<sql id="condition"  >
+		<where>
+			<if test="sysAuthorityName !=null and sysAuthorityName !='' ">
+				and authority_name = #{sysAuthorityName}
+			</if> 
+			<if test="system_id !=null and system_id !=''">
+				and system_id = #{system_id}
+			</if> 
+			<if test="flag !=null and flag != ''">
+				and flag = #{flag}
+			</if>
+		</where>
+	</sql>
+
+	<!-- 根据条件查找权限 -->
+	<select id="findAuth" parameterType="com.xiaoke.entity.qo.SysAuthoritiesQO" resultType="com.xiaoke.entity.vo.SysAuthorities">
+		select au.id as id,au.authority_name as authority_name,au.authority_desc as authority_desc,
+				au.enabled as enabled,au.issys as issys,au.flag as flag,
+				sys.name as systemId,au.system_id as system_id 
+		from sys_authorities au inner join sys_systems sys on au.system_id = sys.id 
+		<include refid="condition"/>
+		limit #{beginRow},#{pageSize}
+	</select>
+	
+	<!-- 确认无重复name -->
+	<select id="FAuth" parameterType="com.xiaoke.entity.qo.SysAuthoritiesQO" resultType="com.xiaoke.entity.vo.SysAuthorities">
+		select * from sys_authorities <include refid="condition"/>
+	</select>
+	 
+	<!-- 根据条件查找总条数 -->
+  	<select id="findAuthTotal" parameterType="com.xiaoke.entity.qo.SysAuthoritiesQO" resultType="int">
+	 	select count(*) from sys_authorities
+	 	<include refid="condition"/>
+	</select>
+	
+	<!-- 添加权限 -->
+	<insert id="addAuth" parameterType="com.xiaoke.entity.vo.SysAuthorities" >
+		insert into sys_authorities(authority_name,
+		<if test="authority_desc !=null and authority_desc !='' ">
+			authority_desc,
+		</if> 
+		enabled,issys,system_id,flag) values(#{authority_name},
+		<if test="authority_desc !=null and authority_desc !='' ">
+			#{authority_desc},
+		</if> 
+		#{enabled},#{issys},#{system_id},#{flag})
+	</insert>
+	
+	<!-- 删除权限 -->
+	<update id="delAuth" parameterType="com.xiaoke.entity.vo.SysAuthorities">
+		update sys_authorities set flag = 0 where id=#{id}
+	</update>
+	
+	<!-- 更新权限 -->
+	<update id="updAuth" parameterType="com.xiaoke.entity.vo.SysAuthorities">
+		update sys_authorities set 
+		authority_name = #{authority_name},
+		authority_desc = #{authority_desc},
+		<if test="enabled !=null and enabled !='' ">
+			enabled = #{enabled},
+		</if> 
+		<if test="issys !=null and issys !='' ">
+			issys = ${issys},
+		</if> 
+		system_id = #{system_id}
+		where id=#{id}
+	</update>
+	
+	 <!-- 根据角色获取权限 -->
+  	<select id="findAuthByRoles" parameterType="Integer" resultType="Map">
+	 	select 
+			role.id as role_id,role.role_name as role_name,au.id as au_id,au.authority_name as au_name
+		from sys_roles role
+		left join sys_roles_authorities ra on role.id = ra.role_id
+		left join sys_authorities au on ra.authority_id = au.id
+		where role.id = #{role_id}
+		and role.enabled = 1 and role.flag = 1 
+		and au.enabled = 1 and au.flag = 1
+	</select>
+	
+	<!-- 根据权限获取资源 -->
+  	<select id="findResByAu" parameterType="Integer" resultType="Map">
+	 	select au.id as au_id,re.id as re_id,au.authority_name as au_name,re.resource_name as re_name from sys_authorities au
+        left join sys_authorities_resources ur on au.id = ur.authority_id
+        left join sys_resources re on ur.resource_id = re.id
+        where au.id = #{au_id}
+        and au.enabled =1
+        and au.flag = 1
+        and re.enabled = 1
+        and re.flag = 1
+	</select>
+	
+	<!-- xf 用户所在系统下的所在权限下的所有资源 -->
+	<select id="searchResource" parameterType="String" resultType="com.xiaoke.entity.vo.SysAuthoritiesVO">
+		SELECT sr.`id` resourceId,sr.`resource_name` resourceName,sr.`parent_id` parentId FROM sys_resources sr INNER JOIN sys_systems ss ON sr.`system_id`=ss.`id`AND ss.`id`=#{systemId}
+	</select>
+	
+	<!-- xf 用户所在系统下的所在权限下的已有资源 -->
+	<select id="searchResourceSelect" parameterType="Map" resultType="com.xiaoke.entity.vo.SysAuthoritiesVO">
+		SELECT sa.`id` authorityId,sa.`authority_name` authorityName,sr.id resourceId,sr.`parent_id` parentId,sr.`resource_name` resourceName,ss.`id` sysId,ss.`name` sysName FROM sys_authorities sa INNER JOIN sys_authorities_resources sar ON sa.id=sar.`authority_id`
+INNER JOIN sys_resources sr ON sar.`resource_id`=sr.`id` INNER JOIN sys_systems ss ON sa.`system_id`=ss.`id` WHERE ss.`id`=#{systemId} and sa.`id`=#{authorityId}
+	</select>
+</mapper>
