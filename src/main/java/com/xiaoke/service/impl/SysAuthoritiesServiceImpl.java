@@ -18,7 +18,7 @@ import com.xiaoke.service.SysAuthoritiesService;
 
 /**
  * 权限系统-权限
- * @author Zhao MengYuan
+ * @author wwh
  *
  */
 @Service
@@ -31,7 +31,7 @@ public class SysAuthoritiesServiceImpl implements SysAuthoritiesService{
 	
 	/**
 	 * 根据输入值查询权限
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 3:06 PM 2016.3.16
 	 */
 	public PageBean<SysAuthorities> findAccessByInput(SysAuthoritiesQO param) {
@@ -50,7 +50,7 @@ public class SysAuthoritiesServiceImpl implements SysAuthoritiesService{
 
 	/**
 	 * 新增权限
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 5:02 PM 2016.3.17
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class SysAuthoritiesServiceImpl implements SysAuthoritiesService{
 
 	/**
 	 * 删除权限
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 10:44 AM 2016.3.21
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class SysAuthoritiesServiceImpl implements SysAuthoritiesService{
 
 	/**
 	 * 更新权限
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 2:16 PM 2016.3.22
 	 */
 	@Override

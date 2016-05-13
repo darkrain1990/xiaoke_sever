@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 分页对象
- * @author Xuwangshen
+ * @author wwh
  *
  * @param <T>
  */
@@ -79,7 +79,7 @@ public class PageBean<T> implements Serializable {
 	 * @param pageSize 页面大小
 	 * @return	
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午12:23:29
 	 */
 	private void calculatePageTotal(int total,int pageSize){
@@ -122,7 +122,7 @@ public class PageBean<T> implements Serializable {
 	/**
 	 * 计算起始行
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:23:30
 	 */
 	public int calculateBeginRow(){
@@ -131,7 +131,7 @@ public class PageBean<T> implements Serializable {
 	
 	/**
 	 * 计算结束行
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:24:36
 	 */
 	public int calculateEndRow(int beginRow){

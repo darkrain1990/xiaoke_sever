@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * 权限系统-权限
- * @author Zhao MengYuan
+ * @author wwh
  *
  */
 public interface SysAuthoritiesMapper {
@@ -18,7 +18,7 @@ public interface SysAuthoritiesMapper {
 	 * 根据输入框查询权限
 	 * @param
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 1:45 PM　2016.3.17
 	 */
 	List<SysAuthorities> findAuth(SysAuthoritiesQO param);
@@ -27,7 +27,7 @@ public interface SysAuthoritiesMapper {
 	 * 查找总条数
 	 * @param
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 1:44 PM　2016.3.17
 	 */
 	int findAuthTotal(SysAuthoritiesQO param);
@@ -36,7 +36,7 @@ public interface SysAuthoritiesMapper {
 	 * 添加权限
 	 * @param
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 1:44 PM　2016.3.17
 	 */
 	int addAuth(SysAuthorities author);
@@ -45,7 +45,7 @@ public interface SysAuthoritiesMapper {
 	 * 删除权限
 	 * @param
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 10:44 AM　2016.3.21
 	 */
 	int delAuth(SysAuthorities author);
@@ -54,7 +54,7 @@ public interface SysAuthoritiesMapper {
 	 * 更新权限
 	 * @param
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 2:16 PM　2016.3.22
 	 */
 	int updAuth(SysAuthorities author);
@@ -63,7 +63,7 @@ public interface SysAuthoritiesMapper {
 	 * 确认无重复name
 	 * @param
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 15:11 PM　2016.3.22
 	 */
 	List<SysAuthorities> FAuth(SysAuthoritiesQO param);
@@ -72,7 +72,7 @@ public interface SysAuthoritiesMapper {
 	 * 根据角色获取权限
 	 * @param 
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 4:11 PM　2016.3.28
 	 */
 	List<Map> findAuthByRoles(Integer role_id);
@@ -81,7 +81,7 @@ public interface SysAuthoritiesMapper {
 	 * 根据权限获取资源
 	 * @param 
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 4:11 PM　2016.3.30
 	 */
 	List<Map> findResByAu(Integer au_id);

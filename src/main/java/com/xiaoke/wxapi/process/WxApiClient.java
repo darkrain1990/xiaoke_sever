@@ -397,8 +397,24 @@ public class WxApiClient {
 		}
 		return null;
 	}
-	
-	
+
+    public static void main(String[] args){
+        TemplateMessage tmp=new TemplateMessage();
+        tmp.setUrl("http://foo");
+        tmp.setTemplateId("111");
+        tmp.setColor("color");
+        tmp.setOpenid("aaaaa");
+
+        MpAccount mp=new MpAccount();
+        mp.setUrl("http://wexin");
+        mp.setAppid("1");
+        mp.setAppsecret("2");
+        mp.setMsgcount(2);
+        mp.setAccount("aa");
+        mp.setToken("aaaaaaa");
+        sendTemplateMessage(tmp,mp);
+    }
+
 }
 
 

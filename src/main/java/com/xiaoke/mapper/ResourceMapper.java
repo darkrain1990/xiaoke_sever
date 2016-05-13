@@ -13,7 +13,7 @@ public interface ResourceMapper {
 	 *
 	 * @param
 	 * @return 分页对象list集合
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月17日
 	 */
 	List<Resource> searchResource(SysResourceQO sq);
@@ -21,7 +21,7 @@ public interface ResourceMapper {
 	 * 资源总条数
 	 * @param
 	 * @return 分页对象list集合
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月18日
 	 */
 	int findTotal(SysResourceQO sq);
@@ -30,7 +30,7 @@ public interface ResourceMapper {
 	 *
 	 * @param
 	 * @return 分页对象list集合
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月18日
 	 */
 	int addResource(Resource res);
@@ -39,7 +39,7 @@ public interface ResourceMapper {
 	 *
 	 * @param
 	 * @return 分页对象list集合
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月22日
 	 */
 	int deleResource(String id);
@@ -48,7 +48,7 @@ public interface ResourceMapper {
 	 *
 	 * @param
 	 * @return 分页对象list集合
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月22日
 	 */
 	int updateResource(Resource res);
@@ -56,7 +56,7 @@ public interface ResourceMapper {
 	/**
 	 * 获取资源模块
 	 *
-	 * @author fangyun
+	 * @author wwh
 	 *
 	 * @Date 2016年3月25日
 	 * */

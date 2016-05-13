@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 合并页面用户属性VO对象
  * 
- * @author Xuwangshen
+ * @author wwh
  *
  */
 public class MergeUserAttributesVO implements Serializable{

@@ -14,7 +14,7 @@ public interface RoleService {
 	 * 
 	 * @param param 条件对象
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:05:12
 	 */
 	PageBean<Role> searchRoleByCondition(SysRoleQO param);

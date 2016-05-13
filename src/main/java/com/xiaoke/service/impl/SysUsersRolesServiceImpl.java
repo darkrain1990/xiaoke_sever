@@ -16,7 +16,7 @@ public class SysUsersRolesServiceImpl implements SysUsersRolesService {
 
 	/**
 	 * 添加SysUsersRoles
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月25日 下午5:07:01
 	 */
 	public JSONObject addUsersRoles(SysUsersRoles ur) {
@@ -32,7 +32,7 @@ public class SysUsersRolesServiceImpl implements SysUsersRolesService {
 
 	/**
 	 * 删除SysUsersRoles
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月25日 下午5:07:01
 	 */
 	public JSONObject delUsersRoles(SysUsersRoles ur) {

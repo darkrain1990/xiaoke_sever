@@ -34,7 +34,7 @@ public class RoleController {
 	Logger logger = LoggerFactory.getLogger(SysUsersController.class);
 	/**
 	 * 显示角色分页对象
-	 * @author fangyun
+	 * @author wwh
 	 * @throws UnsupportedEncodingException 
 	 * @Date 2016年3月17日 
 	 */
@@ -68,7 +68,7 @@ public class RoleController {
 	
 	/**
 	 * 添加角色
-	 * @author fangyun
+	 * @author wwh
 	 * @throws UnsupportedEncodingException 
 	 * @Date 2016年3月16日 下午2:20:34
 	 */
@@ -86,7 +86,7 @@ public class RoleController {
 	}
 	/**
 	 * 删除角色
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月17日 
 	 */
 	@ResponseBody
@@ -104,7 +104,7 @@ public class RoleController {
 	}
 	/**
 	 * 修改角色
-	 * @author fangyun
+	 * @author wwh
 	 * @throws UnsupportedEncodingException 
 	 * @Date 2016年3月22日 
 	 */
@@ -126,7 +126,7 @@ public class RoleController {
 	
 	/**
 	 * 给角色添加或者删除权限
-	 * @author fangyun
+	 * @author wwh
 	 * */
 	@RequestMapping("/addordel")
 	@ResponseBody

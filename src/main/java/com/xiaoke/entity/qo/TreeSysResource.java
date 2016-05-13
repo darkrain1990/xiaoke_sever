@@ -1,7 +1,7 @@
 package com.xiaoke.entity.qo;
 /**
  * 资源预览显示树
- * @author fangyun
+ * @author wwh
  * 
  * */
 public class TreeSysResource {

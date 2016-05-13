@@ -18,7 +18,7 @@ public class SysResourceQO {
 	}
 	/**
 	 * 计算起始行
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月17日 
 	 */
 	public void calculateBeginRowAndEndRow(){

@@ -28,7 +28,7 @@
 					<span class="sr-only"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>运维工具</span></a>
+				<a class="navbar-brand" href="#"><span>小客旅行客服管理系统</span></a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right"><a href="login.jsp"
 						class="dropdown-toggle" data-toggle="dropdown"><span

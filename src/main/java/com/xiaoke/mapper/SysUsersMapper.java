@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * SysUser
- * @author Xuwangshen
+ * @author wwh
  *
  */
 public interface SysUsersMapper {
@@ -18,7 +18,7 @@ public interface SysUsersMapper {
 	 * 
 	 * @param param
 	 * @return 分页对象
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 上午11:05:40
 	 */
 	List<SysUsers> findSysUsers(SysUsersQO param);
@@ -27,7 +27,7 @@ public interface SysUsersMapper {
 	 * 条件查询记录总数
 	 * 
 	 * @param param
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 上午11:16:33
 	 */
 	int findTotal(SysUsersQO param);
@@ -38,7 +38,7 @@ public interface SysUsersMapper {
 	 * @param user 
 	 * @return 受影响行数
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午3:07:38
 	 */
 	int addUser(SysUsers user);
@@ -49,7 +49,7 @@ public interface SysUsersMapper {
 	 * @param user
 	 * @return 受影响行数
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 上午9:52:14
 	 */
 	int updateUserById(SysUsersQO user);
@@ -60,7 +60,7 @@ public interface SysUsersMapper {
 	 * @param id
 	 * @return 受影响行数
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 下午2:54:51
 	 */
 	int delUserById(Integer id);

@@ -15,7 +15,7 @@ public interface ResourceService {
 	 * 
 	 * @param sq 条件对象
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:05:12
 	 */
 	PageBean<Resource> searchResource(SysResourceQO sq);
@@ -25,7 +25,7 @@ public interface ResourceService {
 	 * @param res
 	 * @return
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月16日 下午3:09:07
 	 */
 	JSONObject addResource(Resource res);
@@ -35,7 +35,7 @@ public interface ResourceService {
 	 * @param id
 	 * @return
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月22日 
 	 */
 	JSONObject deleResource(String id);
@@ -45,7 +45,7 @@ public interface ResourceService {
 	 * @param res
 	 * @return
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月23日 
 	 */
 	JSONObject updateResource(Resource res);

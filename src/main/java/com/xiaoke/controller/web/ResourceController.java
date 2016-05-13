@@ -31,7 +31,7 @@ public class ResourceController {
 	Logger logger = LoggerFactory.getLogger(SysUsersController.class);
 	/**
 	 * 显示资源分页对象
-	 * @author fangyun
+	 * @author wwh
 	 * @throws UnsupportedEncodingException 
 	 * @Date 2016年3月17日 
 	 */
@@ -60,7 +60,7 @@ public class ResourceController {
 	}
 	/**
 	 * 添加资源
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月18日 
 	 */
 	@RequestMapping("/add")
@@ -90,7 +90,7 @@ public class ResourceController {
 	
 	/**
 	 * 刪除资源
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月22日 
 	 */
 	@RequestMapping("/dele/{id}")
@@ -108,7 +108,7 @@ public class ResourceController {
 	}
 	/**
 	 * 修改资源
-	 * @author fangyun
+	 * @author wwh
 	 * @throws UnsupportedEncodingException 
 	 * @Date 2016年3月22日 
 	 */
@@ -134,7 +134,7 @@ public class ResourceController {
 	}
 	/**
 	 * 资源预览展示树形结构
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月25日 
 	 */
 	@RequestMapping("/see/{systemId}")

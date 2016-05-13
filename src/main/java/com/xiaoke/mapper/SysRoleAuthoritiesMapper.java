@@ -9,14 +9,14 @@ public interface SysRoleAuthoritiesMapper {
 	
 	/**
 	 * 获取当前系统的所有权限并显示
-	 * @author fangyun
+	 * @author wwh
 	 * */
 	List<SysAuthorities> findAuthorities(int systemId);
 	
 	
 	/**
 	 * 为角色添加权限
-	 * @author fangyun
+	 * @author wwh
 	 * */
 	int addRoleAuthorities(SysRoleAuthorities ur);
 	

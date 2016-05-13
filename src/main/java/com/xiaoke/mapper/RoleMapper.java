@@ -12,7 +12,7 @@ public interface RoleMapper {
 	 * 
 	 * @ 
 	 * @return 分页对象list集合
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月17日 
 	 */
 	List<Role> searchRoles(SysRoleQO qo);
@@ -20,7 +20,7 @@ public interface RoleMapper {
 	 * 条件查询记录总数
 	 * 
 	 * @ 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月17日
 	 */
 	int findTotal(SysRoleQO qo);
@@ -30,7 +30,7 @@ public interface RoleMapper {
 	 * @ user 
 	 * @return
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月17日
 	 */
 	int addRole(Role qo);
@@ -41,7 +41,7 @@ public interface RoleMapper {
 	 * @ id
 	 * @return 修改的行数
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月20日 
 	 */
 	int delRoleById(String id);
@@ -52,7 +52,7 @@ public interface RoleMapper {
 	 * @ user
 	 * @return 修改的行数
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月20日 
 	 */
 	int updateRoleById(Role role);
@@ -63,7 +63,7 @@ public interface RoleMapper {
 	 * @ systemId 系统id
 	 * @return 
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月24日 下午2:00:29
 	 */
 	List<Role> findRolesBySystemId(Integer systemId);
@@ -74,7 +74,7 @@ public interface RoleMapper {
 	 * @ userId 用户id
 	 * @return 角色集合
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月24日 下午4:44:30
 	 */
 	List<Role> findRoleIdsByUserId(String userId);

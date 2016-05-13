@@ -2,7 +2,7 @@ package com.xiaoke.exception;
 
 /**
  * 验证异常
- * @author Xuwangshen
+ * @author wwh
  *
  */
 public class ValidateException extends Exception{

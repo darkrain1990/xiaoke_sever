@@ -10,18 +10,18 @@ public interface SysRoleAuthoritiesService {
 	
 	/**
 	 * 获取当前系统的所有权限并显示
-	 * @author fangyun
+	 * @author wwh
 	 * */
 	List<SysAuthorities> findAuthorities(int systemId);
 	/**
 	 * 给角色添加权限
-	 * @author fangyun
+	 * @author wwh
 	 * */
 	JSONObject addRoleAuthorities(SysRoleAuthorities ur);
 	
 	/**
 	 * 给角色删除权限
-	 * @author fangyun
+	 * @author wwh
 	 */
 	JSONObject delRoleAuthorities(SysRoleAuthorities ur); 
 	/**

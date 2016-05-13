@@ -3,7 +3,7 @@ package com.xiaoke.entity.qo;
 
 /**
  * Sys_Roles 表条件查询对象
- * @author fangyun
+ * @author wwh
  *
  */
 public class SysRoleQO {
@@ -24,7 +24,7 @@ public class SysRoleQO {
 	}
 	/**
 	 * 计算起始行
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月17日 
 	 */
 	public void calculateBeginRowAndEndRow(){

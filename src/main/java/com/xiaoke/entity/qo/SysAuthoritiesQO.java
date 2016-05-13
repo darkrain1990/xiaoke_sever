@@ -2,7 +2,7 @@ package com.xiaoke.entity.qo;
 
 /**
  * 权限系统-权限查询
- * @author Zhao MengYuan
+ * @author wwh
  * 
  */
 public class SysAuthoritiesQO {
@@ -97,7 +97,7 @@ public class SysAuthoritiesQO {
 	
 	/**
 	 * 计算起始行
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 1:32 PM 2016.3.17
 	 */
 	public void calculateBeginRowAndEndRow(){

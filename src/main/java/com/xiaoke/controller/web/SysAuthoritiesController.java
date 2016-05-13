@@ -23,7 +23,7 @@ import java.util.Map;
 
 /**
  * 权限系统-权限
- * @author Zhao MengYuan
+ * @author wwh
  *
  */
 
@@ -41,7 +41,7 @@ public class SysAuthoritiesController {
 	 * @param value input中的用户姓名/手机号码
 	 * @param sys 所属系统
 	 * @return String 结果Json字符串
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 10:55 AM 2016.3.16
 	 */
 	@RequestMapping(value="/findAccessByInput",produces="application/json;charset=UTF-8")
@@ -78,7 +78,7 @@ public class SysAuthoritiesController {
 	 * @param enabled 是否可用   1可用
 	 * @param superAuth 是否超级权限   1可用
 	 * @return String 结果Json字符串
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 4:59 PM 2016.3.17
 	 */
 	@RequestMapping(value="/addAuthority",produces="application/json;charset=UTF-8")
@@ -107,7 +107,7 @@ public class SysAuthoritiesController {
 	 * 删除权限
 	 * @param id id
 	 * @return String 结果Json字符串
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 10:59 AM 2016.3.21
 	 */
 	@RequestMapping(value="/delAuthority",produces="application/json;charset=UTF-8")
@@ -129,7 +129,7 @@ public class SysAuthoritiesController {
 	 * 更新权限
 	 * @param 
 	 * @return String 结果Json字符串
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 2:10 PM 2016.3.22
 	 */
 	@RequestMapping(value="/updAuthority",produces="application/json;charset=UTF-8")

@@ -27,7 +27,7 @@ public class SysUsersController {
 	
 	/**
 	 * 显示用户分页对象
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:20:34
 	 */
 	@RequestMapping(method=RequestMethod.GET,value="/show")
@@ -55,7 +55,7 @@ public class SysUsersController {
 	 * 
 	 * @param user
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午3:14:09
 	 */
 	@RequestMapping(method=RequestMethod.POST,value="/add")
@@ -77,7 +77,7 @@ public class SysUsersController {
 	 * 
 	 * @param id 
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 下午3:02:04
 	 */
 	@RequestMapping(method=RequestMethod.POST,value="/del/{id}")
@@ -98,7 +98,7 @@ public class SysUsersController {
 	 * @param user 
 	 * @return
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月23日 上午11:15:06
 	 */
 	@RequestMapping(method=RequestMethod.POST,value="/update")
@@ -120,7 +120,7 @@ public class SysUsersController {
 	 * @param roleId 角色id
 	 * @param flag 标识 , 判断是删除还是新增  del:删除, add:新增
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月25日 下午5:17:09
 	 */
 	@RequestMapping(method=RequestMethod.POST,value="/aod")
@@ -144,7 +144,7 @@ public class SysUsersController {
 	
 	/**
 	 * 根据id查询用户
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 下午4:28:07
 	 */
 	/*@RequestMapping("/find/{id}")

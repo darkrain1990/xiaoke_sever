@@ -8,14 +8,14 @@ public interface SysUsersRolesService {
 	
 	/**
 	 * 添加SysUsersRoles
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月25日 下午5:07:01
 	 */
 	JSONObject addUsersRoles(SysUsersRoles ur);
 	
 	/**
 	 * 删除SysUsersRoles
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月25日 下午5:07:01
 	 */
 	JSONObject delUsersRoles(SysUsersRoles ur);

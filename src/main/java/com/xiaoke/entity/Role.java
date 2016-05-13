@@ -1,7 +1,7 @@
 package com.xiaoke.entity;
 /**
  * 角色实体类
- * @author fangyun
+ * @author wwh
  *
  */
 public class Role {

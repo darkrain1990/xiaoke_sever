@@ -84,7 +84,7 @@ public class HttpClientUtil {
 	 * @param url 请求地址
 	 * @param nvps 请求参数
 	 * @return String 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月12日 下午2:07:36
 	 */
 	public static String post(String url, List<NameValuePair> nvps) throws ClientProtocolException, IOException {
@@ -98,7 +98,7 @@ public class HttpClientUtil {
 	 * @param params 请求参数
 	 * @param heardParams 请求头参数
 	 * @return String 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月12日 下午2:07:36
 	 */
 	public static String post(String url, Map<String,String> params,Map<String, String> heardParams) throws ClientProtocolException, IOException {
@@ -120,7 +120,7 @@ public class HttpClientUtil {
 	 * @param heardParams 请求头参数
 	 * @param contentType 如果该参数为application/json，则body将以json格式参数请求
 	 * @return String 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月12日 下午2:07:36
 	 */
 	public static String post(String url,Map<String, String> params,Map<String, String> heardParams,String contentType) throws ClientProtocolException, IOException{
@@ -136,7 +136,7 @@ public class HttpClientUtil {
 	 * @param url 请求地址
 	 * @param params 请求参数
 	 * @return String 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月12日 下午2:07:36
 	 */
 	public static String post(String url, Map<String,String> params) throws ClientProtocolException, IOException {

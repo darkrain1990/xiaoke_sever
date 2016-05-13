@@ -91,7 +91,7 @@ public final class SystemServiceConfig {
 	/**
 	 * 获取配置文件中Value
 	 * @param key 配置文件中的key
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月15日 上午11:24:11
 	 */
 	public String getProPerty(String key){

@@ -17,7 +17,7 @@ public interface SysUsersService {
 	 * 
 	 * @param param 条件对象
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:05:12
 	 */
 	JSONObject findSysUsersByCondition(SysUsersQO param);
@@ -28,7 +28,7 @@ public interface SysUsersService {
 	 * @param user
 	 * @return 受影响行数
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午3:09:07
 	 */
 	JSONObject addUser(SysUsers user);
@@ -38,7 +38,7 @@ public interface SysUsersService {
 	 * @param user
 	 * @return 
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 上午10:17:31
 	 */
 	JSONObject updateUser(SysUsersQO user);
@@ -48,7 +48,7 @@ public interface SysUsersService {
 	 * @param id
 	 * @return 受影响行数
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 下午2:56:17
 	 */
 	JSONObject delUserById(Integer id);
@@ -58,7 +58,7 @@ public interface SysUsersService {
 	 * 
 	 * @param id
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 下午4:50:58
 	 */
 	JSONObject findUserById(Integer id);
@@ -67,7 +67,7 @@ public interface SysUsersService {
 	 * 登录验证
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 9:54 AM 2016.3.24
 	 */
 	SysUsers checkUserLogin(SysUsers user);
@@ -76,7 +76,7 @@ public interface SysUsersService {
 	 * 获取角色根据登录对象
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 2:05 PM 2016.3.24
 	 */
 	List<SysUsersRoles> findRolesByUser(SysUsers user);
@@ -85,7 +85,7 @@ public interface SysUsersService {
 	 * 根据角色获取权限
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 2:05 PM 2016.3.24
 	 */
 	List<SysRolesAuthoritiesQO> findAuthByRoles(Integer role_id);
@@ -94,7 +94,7 @@ public interface SysUsersService {
 	 * 根据权限获取资源
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 2:05 PM 2016.3.30
 	 */
 	List<SysAuthorityResourceQO> findResByAu(Integer au_id);

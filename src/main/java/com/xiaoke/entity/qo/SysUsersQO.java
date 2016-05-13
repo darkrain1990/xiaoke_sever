@@ -5,7 +5,7 @@ import com.xiaoke.entity.SysUsers;
 
 /**
  * Sys_Users 表条件查询对象
- * @author Xuwangshen
+ * @author wwh
  *
  */
 public class SysUsersQO extends SysUsers{
@@ -42,7 +42,7 @@ public class SysUsersQO extends SysUsers{
 	
 	/**
 	 * 计算起始行
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:41:48
 	 */
 	public void calculateBeginRowAndEndRow(){

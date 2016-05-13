@@ -107,7 +107,7 @@ public class SysUsers {
 	}
 	/**
 	 * 初始化 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月17日 下午3:34:24
 	 */
 	public void initialize(){

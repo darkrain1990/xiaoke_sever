@@ -46,7 +46,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * 
 	 * @param param 条件对象
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:05:12
 	 */
     @Override
@@ -82,7 +82,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * 
 	 * @param user
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月16日 下午2:05:12
 	 */
 	public JSONObject addUser(SysUsers user) {
@@ -129,7 +129,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * @param user
 	 * @return 
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 上午10:17:31
 	 */
 	public JSONObject updateUser(SysUsersQO user) {
@@ -154,7 +154,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * @param id
 	 * @return 受影响行数
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 下午2:56:17
 	 */
 	public JSONObject delUserById(Integer id) {
@@ -178,7 +178,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * 
 	 * @param id
 	 * 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月18日 下午4:50:58
 	 */
 	public JSONObject findUserById(Integer id) {
@@ -212,7 +212,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * 登录验证
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 9:54 AM 2016.3.24
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * 获取角色根据登录用户
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 2:06 PM 2016.3.24
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * 根据角色获取权限
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 4:06 PM 2016.3.28
 	 */
 	@Override
@@ -266,7 +266,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * 根据权限获取资源
 	 * @param user
 	 * @return
-	 * @author Zhao MengYuan
+	 * @author wwh
 	 * @Date 4:06 PM 2016.3.28
 	 */
 	@Override

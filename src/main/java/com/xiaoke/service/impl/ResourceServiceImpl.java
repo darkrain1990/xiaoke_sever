@@ -16,7 +16,7 @@ import com.xiaoke.mapper.ResourceMapper;
 import com.xiaoke.service.ResourceService;
 
 /**
- * @author fangyun
+ * @author wwh
  * 
  * */
 @Service
@@ -81,7 +81,7 @@ public class ResourceServiceImpl implements ResourceService{
 	}
 
 	/**
-	 * @author fangyun
+	 * @author wwh
 	 * @date 
 	 * */
 

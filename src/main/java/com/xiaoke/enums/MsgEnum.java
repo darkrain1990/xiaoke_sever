@@ -2,7 +2,7 @@ package com.xiaoke.enums;
 
 /**
  * 消息枚举类
- * @author Xuwangshen
+ * @author wwh
  *
  */
 public enum MsgEnum {

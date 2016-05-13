@@ -3,7 +3,7 @@ package com.xiaoke.entity;
 
 /**
  * 资源封装实体类
- * @author fangyun
+ * @author wwh
  * @Date 2016年3月18日 
  */
 public class Resource {

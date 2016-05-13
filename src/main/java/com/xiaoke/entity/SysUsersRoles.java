@@ -2,7 +2,7 @@ package com.xiaoke.entity;
 
 /**
  * 用户和角色关联关系类
- * @author Xuwangshen
+ * @author wwh
  *
  */
 public class SysUsersRoles {

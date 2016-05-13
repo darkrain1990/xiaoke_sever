@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * 
  * <p>该类为延迟加载单例类，提供一些字符串处理的方法。</p>
  * <p>如果有需要用到的一些对字符串处理的方法可以添加到该类中</p>
- * @author Xuwangshen
+ * @author wwh
  *
  */
 public class StringUtilSingleton {
@@ -20,7 +20,7 @@ public class StringUtilSingleton {
 	
 	/**
 	 * 获取字符串工具类（单例）
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月7日 下午3:11:03
 	 */
 	public static StringUtilSingleton getInstance(){
@@ -32,7 +32,7 @@ public class StringUtilSingleton {
 	 * 
 	 * @param str 字符串
 	 * @return 是否为null 或""
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月6日 下午4:06:10
 	 */
 	public boolean isEmpty(String str){
@@ -46,7 +46,7 @@ public class StringUtilSingleton {
 	 * 
 	 * @param mobile 手机号
 	 * @return boolean 手机号格式是否正确
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年1月6日 下午2:07:38
 	 */
 	public boolean isMobile(String mobile){
@@ -63,7 +63,7 @@ public class StringUtilSingleton {
 	 * 
 	 * @param email 邮箱地址
 	 * @return 
-	 * @author Xuwangshen
+	 * @author wwh
 	 * @Date 2016年3月17日 下午2:32:45
 	 */
 	public boolean isEmail(String email){

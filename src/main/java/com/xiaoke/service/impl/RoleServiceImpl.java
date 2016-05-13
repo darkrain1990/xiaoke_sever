@@ -28,7 +28,7 @@ public class RoleServiceImpl implements RoleService{
 	 * 
 	 * @param param 条件对象
 	 * 
-	 * @author fangyun
+	 * @author wwh
 	 * @Date 2016年3月16日 
 	 */
 	public PageBean<Role> searchRoleByCondition(SysRoleQO param) {
@@ -84,7 +84,7 @@ public class RoleServiceImpl implements RoleService{
 	}
 	/**
 	 * 修改角色
-	 * @author fangyun
+	 * @author wwh
 	 * */
 	@Override
 	public JSONObject updateRoleById(Role role) {

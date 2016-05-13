@@ -59,34 +59,6 @@ $(document).ready(function() {
 	<input type="hidden" name="clientId" value="${clientId}" class="clientId"/>
 	<ul class="nav menu" style="margin-top: 42px;">
 		<li class="parent">
-			<a href="../searchuser/finduserinfo">
-				<span class="glyphicon glyphicon-list"></span> IDM用户管理 
-				<span data-toggle="collapse" href="#sub-item-1" class="icon pull-right">
-				<em class="glyphicon glyphicon-s glyphicon-minus"></em></span> 
-			</a>
-			<ul class="children collapse in" id="sub-item-1">
-				<li><a href="#" class="userSearch"> <span
-						class="glyphicon glyphicon-user"></span>用户查询
-				</a></li>
-				<li><a href="../note/searchmess" class="message"> <span
-						class="glyphicon glyphicon-comment"></span> 短信查询
-				</a></li>
-				<li><a href="#"><span
-						class="glyphicon glyphicon-tags"></span> 合并用户
-				</a>
-					<ul>
-						<li><a href="#" class="autoMerge"> <span
-								class="glyphicon glyphicon-pushpin"></span>自动合并
-						</a></li>
-						<li><a href="#" class="manualMerge"> <span
-								class="glyphicon glyphicon-pushpin"></span>手动合并
-						</a></li>
-					</ul></li>
-
-			</ul>
-		</li>
-		
-		<li class="parent">
 			<a href="#">
 				<span class="glyphicon glyphicon-briefcase">
 				</span> 权限管理 <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-minus"></em></span> 
@@ -114,13 +86,9 @@ $(document).ready(function() {
 				</li>
 			</ul>
 		</li>
+
 		<li class="parent">
-			<a href="../loads/carsManage.jsp" class="carsManage">
-				<span class="glyphicon glyphicon-wrench"></span> 车辆管理</a>
-			</a>
-		</li>
-		<li class="parent">
-			<a href="../loads/unbundling.jsp" class="unbunding"><span class="glyphicon glyphicon-lock"></span> 解除绑定</a>
+			<a href="#" class="unbunding"><span class="glyphicon glyphicon-lock"></span> Test</a>
 		</li>
 	</ul>
 
