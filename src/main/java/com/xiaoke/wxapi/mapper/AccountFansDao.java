@@ -1,6 +1,6 @@
 package com.xiaoke.wxapi.mapper;
 
-import com.xiaoke.core.page.Pagination;
+import com.xiaoke.wxapi.core.page.Pagination;
 import com.xiaoke.wxapi.domain.AccountFans;
 
 import java.util.List;

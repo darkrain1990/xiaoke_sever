@@ -1,9 +1,9 @@
 package com.xiaoke.controller.web;
 
-import com.xiaoke.core.page.Pagination;
-import com.xiaoke.core.spring.JsonView;
-import com.xiaoke.core.spring.util.DateUtil;
-import com.xiaoke.core.spring.util.wx.SignUtil;
+import com.xiaoke.wxapi.core.page.Pagination;
+import com.xiaoke.wxapi.core.spring.JsonView;
+import com.xiaoke.wxapi.core.spring.util.DateUtil;
+import com.xiaoke.wxapi.core.spring.util.wx.SignUtil;
 import com.xiaoke.wxapi.domain.AccountFans;
 import com.xiaoke.wxapi.domain.MsgNews;
 import com.xiaoke.wxapi.process.*;

@@ -1,7 +1,7 @@
 package com.xiaoke.wxapi.process;
 
-import com.xiaoke.core.spring.util.wx.SecurityUtil;
-import com.xiaoke.core.spring.util.wx.SignUtil;
+import com.xiaoke.wxapi.core.spring.util.wx.SecurityUtil;
+import com.xiaoke.wxapi.core.spring.util.wx.SignUtil;
 
 import java.util.SortedMap;
 import java.util.TreeMap;

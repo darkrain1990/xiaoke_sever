@@ -1,6 +1,6 @@
 package com.xiaoke.wxapi.interceptor;
 
-import com.xiaoke.core.spring.util.HttpUtil;
+import com.xiaoke.wxapi.core.spring.util.HttpUtil;
 import com.xiaoke.wxapi.process.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

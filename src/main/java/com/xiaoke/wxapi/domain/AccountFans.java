@@ -1,6 +1,6 @@
 package com.xiaoke.wxapi.domain;
 
-import com.xiaoke.core.domain.BaseEntity;
+import com.xiaoke.wxapi.core.domain.BaseEntity;
 
 import java.io.UnsupportedEncodingException;
 

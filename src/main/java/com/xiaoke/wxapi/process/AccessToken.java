@@ -1,6 +1,6 @@
 package com.xiaoke.wxapi.process;
 
-import com.xiaoke.core.spring.util.CalendarUtil;
+import com.xiaoke.wxapi.core.spring.util.CalendarUtil;
 
 
 public class AccessToken {
