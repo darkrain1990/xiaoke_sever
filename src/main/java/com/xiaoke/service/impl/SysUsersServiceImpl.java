@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.xiaoke.entity.vo.SysAuthorities;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.lang3.StringUtils;
@@ -24,6 +25,7 @@ import com.xiaoke.mapper.SysAuthoritiesMapper;
 import com.xiaoke.mapper.SysUsersMapper;
 import com.xiaoke.mapper.SysUsersRolesMapper;
 import com.xiaoke.service.SysUsersService;
+import org.springframework.transaction.annotation.Transactional;
 
 //@Service("sysUsersService")
 @Service
@@ -85,6 +87,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 	 * @author wwh
 	 * @Date 2016年3月16日 下午2:05:12
 	 */
+    @Transactional
 	public JSONObject addUser(SysUsers user) {
 		Validate.notNull(user, "user is null");
 		JSONObject json = new JSONObject();
@@ -108,7 +111,13 @@ public class SysUsersServiceImpl implements SysUsersService {
 					//初始化一些参数，并将密码MD5加密
 					user.initialize();
 					int row = sysUsersMapper.addUser(user);
-					
+
+                    //TODO TEST
+                    SysAuthorities sa=new SysAuthorities();
+                    sa.setId(null);
+                    sa.setAuthority_name("aaaa");
+                    sysAuthoritiesMapper.addAuth(sa);
+
 					if(row>0){
 						SysUsersQO param = new SysUsersQO();
 						json = findSysUsersByCondition(param);
