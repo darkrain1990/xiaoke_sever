@@ -1,8 +1,8 @@
 package com.xiaoke.entity;
 
-import java.util.Date;
-
 import com.xiaoke.common.util.EncryptionUtil;
+
+import java.util.Date;
 
 public class SysUsers {
 
@@ -13,19 +13,15 @@ public class SysUsers {
 	private String userDesc;		//用户描述
 	private Integer enabled;		//是否可用， 可用：1  不可以：0
 	private Integer issys;			//是否为超级用户， 超级用户：1  普通用户：0
-	private String userDept;		//所在单位
-	private String userDuty;		//经理或主任
 	private String email;			//邮箱地址
-	private Integer systemId;			//所属系统
 	private String mobileNum;		//手机号
-	private Integer flag;			//是否删除， 删除：0 非删除：1
-	private Date createDate;		//创建时间
+	private Date createTime;		//创建时间
 	
-	public Date getCreateDate() {
-		return createDate;
+	public Date getCreateTime() {
+		return createTime;
 	}
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 	public String getLoginName() {
 		return loginName;
@@ -63,18 +59,6 @@ public class SysUsers {
 	public void setIssys(Integer issys) {
 		this.issys = issys;
 	}
-	public String getUserDept() {
-		return userDept;
-	}
-	public void setUserDept(String userDept) {
-		this.userDept = userDept;
-	}
-	public String getUserDuty() {
-		return userDuty;
-	}
-	public void setUserDuty(String userDuty) {
-		this.userDuty = userDuty;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -86,18 +70,6 @@ public class SysUsers {
 	}
 	public void setMobileNum(String mobileNum) {
 		this.mobileNum = mobileNum;
-	}
-	public Integer getFlag() {
-		return flag;
-	}
-	public void setFlag(Integer flag) {
-		this.flag = flag;
-	}
-	public Integer getSystemId() {
-		return systemId;
-	}
-	public void setSystemId(Integer systemId) {
-		this.systemId = systemId;
 	}
 	public Integer getId() {
 		return id;
@@ -112,7 +84,6 @@ public class SysUsers {
 	 */
 	public void initialize(){
 		String encryptedPassword = EncryptionUtil.encryption(this.userName,this.userPassword);
-		setFlag(1);
 		setIssys(0);
 		setEnabled(1);
 		setUserPassword(encryptedPassword);

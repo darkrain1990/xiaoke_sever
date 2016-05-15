@@ -57,7 +57,7 @@ public class SysUsersQO extends SysUsers{
 	}
 	
 	public SysUsersQO(int beginRow, int endRow, int pageSize, int index,
-			Integer id, Integer systemId, String mobileNum, String userName,
+			Integer id, String mobileNum, String userName,
 			String loginName) {
 		super();
 		this.beginRow = beginRow;
@@ -65,7 +65,6 @@ public class SysUsersQO extends SysUsers{
 		this.pageSize = pageSize;
 		this.index = index;
 		super.setId(id) ;
-		super.setSystemId(systemId);
 		super.setMobileNum(mobileNum);
 		super.setUserName(userName);
 		super.setLoginName(loginName);

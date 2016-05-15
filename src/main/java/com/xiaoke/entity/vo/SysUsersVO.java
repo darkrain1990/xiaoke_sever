@@ -8,8 +8,6 @@ public class SysUsersVO {
 	private String userDesc;		//用户描述
 	private Integer enabled;		//是否可用， 可用：1  不可以：0
 	private Integer issys;			//是否为超级用户， 超级用户：1  普通用户：0
-	private String userDept;		//所在单位
-	private String userDuty;		//经理或主任
 	private String email;			//邮箱地址
 	private String mobileNum;		//手机号
 	public Integer getId() {
@@ -48,18 +46,6 @@ public class SysUsersVO {
 	public void setIssys(Integer issys) {
 		this.issys = issys;
 	}
-	public String getUserDept() {
-		return userDept;
-	}
-	public void setUserDept(String userDept) {
-		this.userDept = userDept;
-	}
-	public String getUserDuty() {
-		return userDuty;
-	}
-	public void setUserDuty(String userDuty) {
-		this.userDuty = userDuty;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -73,8 +59,7 @@ public class SysUsersVO {
 		this.mobileNum = mobileNum;
 	}
 	public SysUsersVO(Integer id, String loginName, String userName,
-			String userDesc, Integer enabled, Integer issys, String userDept,
-			String userDuty, String email, String mobileNum) {
+			String userDesc, Integer enabled, Integer issys,String email, String mobileNum) {
 		super();
 		this.id = id;
 		this.loginName = loginName;
@@ -82,8 +67,6 @@ public class SysUsersVO {
 		this.userDesc = userDesc;
 		this.enabled = enabled;
 		this.issys = issys;
-		this.userDept = userDept;
-		this.userDuty = userDuty;
 		this.email = email;
 		this.mobileNum = mobileNum;
 	}

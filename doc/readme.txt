@@ -14,3 +14,7 @@ com.xiaoke.controller.ws.TestController
 
 --jeeweixin代码入口
 com.xiaoke.wxapi
+
+
+--后台管理系统账号
+admin/Pass1234

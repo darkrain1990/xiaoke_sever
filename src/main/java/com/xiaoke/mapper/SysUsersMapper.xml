@@ -28,20 +28,15 @@
 				user_desc userDesc,
 				enabled,
 				issys,
-				user_dept userDept,
-				user_duty userDuty,
-				email,				
-				mobile_num mobileNum,
-				flag,
-				system_id systemId,
-				create_date createDate
+				email,
+				mobile_num mobileNum
 	</sql>
 
 	<select id="findSysUsers" parameterType="com.xiaoke.entity.qo.SysUsersQO" resultType="com.xiaoke.entity.SysUsers">
 		select 
 			<include refid="sysUsersSql"/>
 			from sys_users <include refid="condition"/>
-		order by create_date desc
+		<!--order by create_time desc-->
 		limit #{beginRow},#{pageSize}
 	</select>
 	 
@@ -58,13 +53,8 @@
 							user_desc,
 							enabled,
 							issys,
-							user_dept,
-							user_duty,
 							email,
-							mobile_num,
-							flag,
-							system_id,
-							create_date
+							mobile_num
 						) 
 						VALUES
 							(
@@ -74,13 +64,9 @@
 								#{userDesc},
 								#{enabled},
 								#{issys},
-								#{userDept},
-								#{userDuty},
 								#{email},
-								#{mobileNum},
-								#{flag},
-								#{systemId},
-								CURRENT_TIMESTAMP
+								#{mobileNum}
+								/*CURRENT_TIMESTAMP*/
 							)
 									
 	</insert>
@@ -106,23 +92,11 @@
 			<if test="issys !=null ">
 				issys =#{issys},
 			</if>
-			<if test="userDesc !=null and userDesc !='' ">
-				user_desc =#{userDesc},
-			</if>
-			<if test="userDuty !=null and userDuty !='' ">
-				 user_duty=#{userDuty},
-			</if>
 			<if test="email !=null and email !='' ">
 			 	email=#{email},
 			</if>
 			<if test="mobileNum !=null and mobileNum !='' ">
 			 	mobile_num=#{mobileNum},
-			</if>
-		 	<if test="flag !=null ">
-			 	flag=#{flag}
-			</if>
-			<if test="systemId !=null ">
-			 	system_id=#{systemId},
 			</if>
 		</set>
 		where id=#{id}
@@ -146,9 +120,6 @@
 			</if>
 			<if test="enabled !=null ">
 				and enabled = #{enabled}
-			</if>
-			<if test="flag !=null ">
-				and flag = #{flag}
 			</if>
 		</where>
 	</select>

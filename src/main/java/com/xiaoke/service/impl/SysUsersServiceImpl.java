@@ -207,9 +207,7 @@ public class SysUsersServiceImpl implements SysUsersService {
 									user.getUserDesc(), 
 									user.getEnabled(), 
 									user.getIssys(),
-									user.getUserDept(), 
-									user.getUserDuty(), 
-									user.getEmail(), 
+									user.getEmail(),
 									user.getMobileNum());
 		}
 		json.put("user", userVO);

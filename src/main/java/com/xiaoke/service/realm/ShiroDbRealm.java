@@ -1,7 +1,10 @@
 package com.xiaoke.service.realm;
 
-import java.util.List;
-
+import com.xiaoke.entity.SysUsers;
+import com.xiaoke.entity.SysUsersRoles;
+import com.xiaoke.entity.qo.SysAuthorityResourceQO;
+import com.xiaoke.entity.qo.SysRolesAuthoritiesQO;
+import com.xiaoke.service.SysUsersService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -18,11 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.xiaoke.entity.SysUsers;
-import com.xiaoke.entity.SysUsersRoles;
-import com.xiaoke.entity.qo.SysAuthorityResourceQO;
-import com.xiaoke.entity.qo.SysRolesAuthoritiesQO;
-import com.xiaoke.service.SysUsersService;
+import java.util.List;
 
 @Component
 public class ShiroDbRealm extends AuthorizingRealm{
@@ -81,7 +80,6 @@ public class ShiroDbRealm extends AuthorizingRealm{
     	try {
     		SysUsers u = new SysUsers();
     		u.setLoginName((String) principals.getPrimaryPrincipal());
-    		u.setFlag(1);
 	    	SysUsers account = sysUsersService.checkUserLogin(u);
 	    	
 	        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
@@ -117,7 +115,6 @@ public class ShiroDbRealm extends AuthorizingRealm{
     	try {
     		SysUsers u = new SysUsers();
     		u.setLoginName(((UsernamePasswordToken) token).getUsername());
-    		u.setFlag(1);
 	    	SysUsers account = sysUsersService.checkUserLogin(u);
 	        if (account != null) {
 	            SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(account.getLoginName(), account.getUserPassword(),"");
